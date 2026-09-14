@@ -68,9 +68,9 @@
                         "full": "9999px"
                     },
                     spacing: {
-                        "section-gap": "96px",
+                        "section-gap": "clamp(40px, 6vw, 96px)",
                         "unit": "8px",
-                        "margin-page": "clamp(1rem, 4vw, 48px)",
+                        "margin-page": "clamp(16px, 5vw, 48px)",
                         "gutter": "24px",
                         "container-max": "1280px"
                     },
@@ -105,35 +105,41 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background: white;
-            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 1.25rem 1.5rem;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            z-index: 40;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            z-index: 50;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
         }
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface organic-bg antialiased selection:bg-primary selection:text-on-primary">
 <!-- Navigation Header (Unified) -->
 <header class="bg-surface/95 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
-<div class="max-w-container-max mx-auto flex justify-between items-center px-margin-page h-20 relative">
-<a href="index.html" class="flex items-center gap-3">
-<span class="text-2xl text-primary font-bold">卐</span>
+<div class="max-w-container-max mx-auto flex justify-between items-center px-4 sm:px-6 md:px-margin-page h-16 md:h-20 relative">
+<a href="index.html" class="flex items-center gap-2.5 sm:gap-3">
+<span class="text-xl sm:text-2xl text-primary font-bold shrink-0">卐</span>
 <div class="flex flex-col">
-<span class="font-headline-md font-bold text-primary tracking-tight leading-tight">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
-<span class="text-xs font-semibold text-secondary tracking-wider uppercase">Sarvesh Divya Charitable Trust (Regd. 396)</span>
+<span class="font-headline-md font-bold text-primary tracking-tight leading-tight text-base sm:text-lg md:text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+<span class="text-[10px] sm:text-xs font-semibold text-secondary tracking-wider uppercase">Sarvesh Divya Charitable Trust (Regd. 396)</span>
 </div>
 </a>
 <input class="hidden peer" id="mobile-menu-toggle" type="checkbox">
-<label class="md:hidden p-2 text-primary cursor-pointer" for="mobile-menu-toggle">
+<label class="md:hidden p-2 text-primary hover:bg-primary/5 rounded-lg active:scale-95 transition-all cursor-pointer" for="mobile-menu-toggle">
 <span class="material-symbols-outlined text-2xl">menu</span>
 </label>
-<nav class="hidden md:flex items-center gap-6 lg:gap-8 bg-surface md:bg-transparent absolute md:relative top-20 md:top-0 left-0 w-full md:w-auto p-6 md:p-0 flex-col md:flex-row border-b md:border-0 border-outline-variant/30 shadow-lg md:shadow-none peer-checked:flex">
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="trust-works.html">Trust Works</a>
-<a class="font-label-sm font-semibold text-primary border-b-2 border-primary pb-1" href="about-guruji.html">About Guruji</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="donation.html">Donation</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
-<a class="md:hidden w-full text-center bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm mt-4 shadow" href="donation.html">Donate Now</a>
+<nav class="hidden md:flex items-center gap-5 lg:gap-8 bg-surface md:bg-transparent absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto p-5 md:p-0 flex-col md:flex-row border-b md:border-0 border-outline-variant/30 shadow-lg md:shadow-none peer-checked:flex">
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="index.html">Home</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="trust-works.html">Trust Works</a>
+<a class="font-label-sm font-semibold text-primary border-b-2 border-primary pb-1 w-full md:w-auto text-left md:text-center" href="about-guruji.html">About Guruji</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="donation.html">Donation</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="contact.html">Contact</a>
+<a class="md:hidden w-full text-center bg-primary text-on-primary px-6 py-3 rounded-xl font-label-sm mt-3 shadow-md flex items-center justify-center gap-2 font-bold" href="donation.html">
+<span class="material-symbols-outlined text-lg">volunteer_activism</span> Donate Now
+</a>
 </nav>
 <a class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-sm hover:bg-primary-container transition-all shadow-sm active:scale-95" href="donation.html">
 <span class="material-symbols-outlined text-base">volunteer_activism</span>
@@ -141,39 +147,39 @@
 </a>
 </div>
 </header>
-<main class="max-w-container-max mx-auto px-margin-page">
-<!-- HERO SECTION: Authentic Photos & Titles -->
-<section class="mt-8 lg:mt-14 mb-section-gap">
+<main class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page">
+<!-- HERO SECTION -->
+<section class="mt-6 sm:mt-8 lg:mt-14 mb-section-gap">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 <!-- Left: Authentic Images Dual Presentation -->
 <div class="lg:col-span-6 relative">
-<div class="relative mx-auto max-w-md lg:max-w-none">
-<!-- Dais Photo (Main Full Frame) -->
+<div class="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
+<!-- Dais Photo -->
 <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-highest bg-surface-container">
-<img alt="Guruji Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb" class="w-full h-[420px] sm:h-[480px] object-cover object-top hover:scale-[1.02] transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XCSKlERqbvhROKW-cCkEFlpVjDsLlB7zF9ZUYNa0Wj9c65ddO4FTRcbL_Wkx952WNTVWPSOZLIeDAEMPEkB6b9YM6C5eHaQwPgaRmk0LxokqhNGfafCWtHHCbXP9y8M1NELM2gic8JqZAtro1DJbLDIZV3vzWWRh9BqxzKpcdC5bX0xa97Zx57q8tqo3H3nkdsYBSOUxei2sK_DmM6Q5ZoCDktBW2lurfeKQ4wW36vtLrgWAu7u_Zz1Q4JUwetHe24x_NXz0dYKt4">
-<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/30 flex items-center justify-between">
+<img alt="Guruji Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb" class="w-full h-[340px] sm:h-[420px] lg:h-[480px] object-cover object-top hover:scale-[1.02] transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XCSKlERqbvhROKW-cCkEFlpVjDsLlB7zF9ZUYNa0Wj9c65ddO4FTRcbL_Wkx952WNTVWPSOZLIeDAEMPEkB6b9YM6C5eHaQwPgaRmk0LxokqhNGfafCWtHHCbXP9y8M1NELM2gic8JqZAtro1DJbLDIZV3vzWWRh9BqxzKpcdC5bX0xa97Zx57q8tqo3H3nkdsYBSOUxei2sK_DmM6Q5ZoCDktBW2lurfeKQ4wW36vtLrgWAu7u_Zz1Q4JUwetHe24x_NXz0dYKt4">
+<div class="p-3 sm:p-4 bg-surface-container-lowest border-t border-outline-variant/30 flex items-center justify-between">
 <div>
-<p class="font-bold text-primary text-sm sm:text-base">पूज्य गुरुदेव श्री (निराले बाबा)</p>
-<p class="text-xs text-on-surface-variant">समन्वय मंच, पावन दर्शन</p>
+<p class="font-bold text-primary text-xs sm:text-base">पूज्य गुरुदेव श्री (निराले बाबा)</p>
+<p class="text-[11px] sm:text-xs text-on-surface-variant">समन्वय मंच, पावन दर्शन</p>
 </div>
-<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-xs font-semibold">जीव-दया प्रणेता</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold">जीव-दया प्रणेता</span>
 </div>
 </div>
-<!-- Portrait Overlay Thumbnail with High Clarity -->
-<div class="absolute -bottom-6 -right-4 sm:-right-6 w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-4 border-surface-container-lowest shadow-2xl bg-black">
+<!-- Portrait Overlay Thumbnail -->
+<div class="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 w-28 h-28 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-4 border-surface-container-lowest shadow-2xl bg-black">
 <img alt="Guruji Close Up Portrait" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/AEtjO1WCMYl0e4_Q8mKx7VR8QwFDisXuMYSzoPo1QNeD_QtAL4aviavF806WuJuDdYczJFcDH3bbSGRfyCvutBgpxBCAPR3aapba2vvY3GwO0jEs7Pwb3vSAvThZxLIknTaQdYsUaWNRoloX-s44a5syVbBk_OGFHS4HzqlYDzMNVBL3m0JH9rGrbEY4L2l3Xqhmiouce8GaoBv5S0ZTVaGsA80KRDZyWHbaPapC8P9Ro-KlcllNeQmEx1wDP4rm65o8onOiOr6s0z51bQ">
 </div>
 <!-- Badge Quote -->
-<div class="absolute -top-4 -left-4 bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-xl shadow-lg border border-primary/20 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
-<span class="material-symbols-outlined text-base">spa</span>
+<div class="absolute -top-3 -left-2 sm:-top-4 sm:-left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-lg border border-primary/20 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm sm:text-base">spa</span>
 <span class="">अहिंसा परमो धर्म:</span>
 </div>
 </div>
 </div>
 <!-- Right: Authentic Full Titles & Introduction -->
-<div class="lg:col-span-6 space-y-4 lg:space-y-5">
-<div class="flex flex-wrap gap-2 items-center">
-<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3.5 py-1 rounded-full font-bold text-xs uppercase tracking-wider">
+<div class="lg:col-span-6 space-y-3 sm:space-y-5 text-center lg:text-left">
+<div class="flex flex-wrap gap-2 items-center justify-center lg:justify-start">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider">
                             निराले बाबा
                         </span>
 <span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-semibold">
@@ -181,28 +187,28 @@
                         </span>
 </div>
 <div>
-<p class="text-secondary font-bold text-base sm:text-lg mb-1 tracking-wide">
+<p class="text-secondary font-bold text-xs sm:text-lg mb-1 tracking-wide">
                             राष्ट्रसंत, सर्व धर्म दिवाकर, पंजाब मालवा केसरी
                         </p>
-<h1 class="font-headline-xl text-3xl sm:text-4xl lg:text-5xl text-primary font-bold leading-tight">
+<h1 class="font-headline-xl text-2xl sm:text-4xl lg:text-5xl text-primary font-bold leading-tight">
                             Dr. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी महाराज साहब
                         </h1>
-<p class="text-sm sm:text-base font-semibold text-on-surface-variant mt-1.5">
+<p class="text-xs sm:text-base font-semibold text-on-surface-variant mt-1">
                             Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb (Nirale Baba)
                         </p>
 </div>
 <!-- Authentic Title Badges -->
-<div class="flex flex-wrap gap-2 pt-1">
-<span class="border border-outline-variant bg-surface-container-lowest px-3 py-1 rounded-lg text-on-surface text-xs font-medium">अग्रवाल समाज सुधारक</span>
-<span class="border border-outline-variant bg-surface-container-lowest px-3 py-1 rounded-lg text-on-surface text-xs font-medium">बीकाणा पंजाब गौरव</span>
-<span class="border border-outline-variant bg-surface-container-lowest px-3 py-1 rounded-lg text-on-surface text-xs font-medium">क्रांतिकारी</span>
-<span class="border border-outline-variant bg-surface-container-lowest px-3 py-1 rounded-lg text-on-surface text-xs font-medium">कश्मीर केसरी</span>
+<div class="flex flex-wrap gap-1.5 sm:gap-2 pt-1 justify-center lg:justify-start">
+<span class="border border-outline-variant bg-surface-container-lowest px-2.5 py-1 rounded-lg text-on-surface text-[11px] sm:text-xs font-medium">अग्रवाल समाज सुधारक</span>
+<span class="border border-outline-variant bg-surface-container-lowest px-2.5 py-1 rounded-lg text-on-surface text-[11px] sm:text-xs font-medium">बीकाणा पंजाब गौरव</span>
+<span class="border border-outline-variant bg-surface-container-lowest px-2.5 py-1 rounded-lg text-on-surface text-[11px] sm:text-xs font-medium">क्रांतिकारी</span>
+<span class="border border-outline-variant bg-surface-container-lowest px-2.5 py-1 rounded-lg text-on-surface text-[11px] sm:text-xs font-medium">कश्मीर केसरी</span>
 </div>
-<p class="font-body-lg text-on-surface-variant text-base leading-relaxed">
+<p class="font-body-lg text-on-surface-variant text-xs sm:text-base leading-relaxed">
                         पूज्य गुरुदेव डॉ. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी महाराज साहब (निराले बाबा) ने अपना सम्पूर्ण जीवन जैन धर्म के शाश्वत सिद्धांतों—अहिंसा, करुणा, जीव-दया और निष्काम सेवा के प्रचार-प्रसार में समर्पित किया है। पंजाब, हरियाणा, राजस्थान और मध्य प्रदेश में बेजुबान पक्षियों, गौवंश के उपचार हेतु अस्पतालों तथा ग्रामीण अंचल में संस्कारयुक्त शिक्षा के लिए विद्यालयों की स्थापना आपकी प्रमुख देन है।
                     </p>
 <!-- Key Pillars Highlights -->
-<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-left">
 <div class="p-3.5 bg-surface-container-low rounded-xl border-l-4 border-primary shadow-sm">
 <div class="flex items-center gap-2 mb-1">
 <span class="material-symbols-outlined text-primary text-xl">cruelty_free</span>
@@ -223,19 +229,19 @@
 </section>
 <!-- OFFICIAL DECLARATION & BLESSINGS SECTION -->
 <section class="mb-section-gap" id="blessings">
-<div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-3xl p-6 sm:p-10 lg:p-12 border border-outline-variant/40 shadow-xl">
-<div class="text-center max-w-3xl mx-auto mb-10">
-<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-3">
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-3xl p-5 sm:p-10 lg:p-12 border border-outline-variant/40 shadow-xl">
+<div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-3">
                         75th Year Special Declaration
                     </span>
-<h2 class="font-headline-xl text-2xl sm:text-4xl text-primary font-bold mb-3">
+<h2 class="font-headline-xl text-xl sm:text-3xl lg:text-4xl text-primary font-bold mb-2 sm:mb-3">
                         श्री आदिश्वर मंडल, बीकानेर का पावन संदेश
                     </h2>
-<p class="text-on-surface-variant text-sm sm:text-base">
+<p class="text-on-surface-variant text-xs sm:text-base">
                         पूज्य गुरुदेव के मार्गदर्शन व सद् प्रेरणा से निर्मित सामाजिक एवं धार्मिक संस्थाओं का अधिकृत विवरण
                     </p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 <!-- High Res Authentic Poster Preview -->
 <div class="lg:col-span-6 flex justify-center">
 <div class="relative group max-w-md w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
@@ -247,40 +253,40 @@
 </div>
 </div>
 <!-- Structured Summary of Poster Information -->
-<div class="lg:col-span-6 space-y-5">
-<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-sm space-y-4">
-<h3 class="font-headline-md text-xl text-primary font-bold flex items-center gap-2">
+<div class="lg:col-span-6 space-y-4 sm:space-y-5">
+<div class="bg-surface-container-lowest p-5 sm:p-6 rounded-2xl border border-outline-variant/30 shadow-sm space-y-3 sm:space-y-4">
+<h3 class="font-headline-md text-lg sm:text-xl text-primary font-bold flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary">verified_user</span>
 <span class="">मार्गदर्शन व सद् प्रेरणा से स्थापित आयाम</span>
 </h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                                 बीकानेर, पंजाब, हरियाणा एवं मध्य प्रदेश में गुरुदेव के मंगल आशीर्वाद से पशु-पक्षी अस्पताल, तीर्थ, मंदिर एवं गौधाम निरंतर संचालित हो रहे हैं।
                             </p>
-<div class="border-t border-outline-variant/20 pt-4 space-y-3">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-xl mt-0.5">location_on</span>
+<div class="border-t border-outline-variant/20 pt-3 sm:pt-4 space-y-3">
+<div class="flex items-start gap-2.5 sm:gap-3">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl mt-0.5">location_on</span>
 <div>
-<p class="text-sm font-bold text-on-surface">समन्वय कार्यक्षेत्र (States Covered):</p>
-<p class="text-xs text-on-surface-variant">पंजाब (बठिंडा, बरनाला, संगरूर, मानसा), राजस्थान (बीकानेर, चूरू, हनुमानगढ़, श्री गंगानगर), हरियाणा (फतेहाबाद), मध्य प्रदेश (रतलाम)</p>
+<p class="text-xs sm:text-sm font-bold text-on-surface">समन्वय कार्यक्षेत्र (States Covered):</p>
+<p class="text-[11px] sm:text-xs text-on-surface-variant">पंजाब (बठिंडा, बरनाला, संगरूर, मानसा), राजस्थान (बीकानेर, चूरू, हनुमानगढ़, श्री गंगानगर), हरियाणा (फतेहाबाद), मध्य प्रदेश (रतलाम)</p>
 </div>
 </div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-xl mt-0.5">account_balance</span>
+<div class="flex items-start gap-2.5 sm:gap-3">
+<span class="material-symbols-outlined text-secondary text-lg sm:text-xl mt-0.5">account_balance</span>
 <div>
-<p class="text-sm font-bold text-on-surface">पंजीकृत ट्रस्ट (Trust Details):</p>
-<p class="text-xs text-on-surface-variant">Sarvesh Divya Charitable Trust, Bathinda (Regd. No. 396) | 80G Tax Exempted (u/s 11 clause (i) of first proviso to subsection (5))</p>
+<p class="text-xs sm:text-sm font-bold text-on-surface">पंजीकृत ट्रस्ट (Trust Details):</p>
+<p class="text-[11px] sm:text-xs text-on-surface-variant">Sarvesh Divya Charitable Trust, Bathinda (Regd. No. 396) | 80G Tax Exempted (u/s 11 clause (i) of first proviso to subsection (5))</p>
 </div>
 </div>
 </div>
 </div>
 <!-- Core Principles Grid -->
-<div class="grid grid-cols-2 gap-3">
-<div class="p-4 bg-white rounded-xl border border-outline-variant/30">
-<span class="text-primary font-bold block text-sm mb-1">🕊️ अहिंसा (Ahimsa)</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-3.5 sm:p-4 bg-white rounded-xl border border-outline-variant/30">
+<span class="text-primary font-bold block text-xs sm:text-sm mb-1">🕊️ अहिंसा (Ahimsa)</span>
 <p class="text-xs text-on-surface-variant">प्रत्येक प्राणी के जीवन की रक्षा और कल्याण का संकल्प।</p>
 </div>
-<div class="p-4 bg-white rounded-xl border border-outline-variant/30">
-<span class="text-secondary font-bold block text-sm mb-1">🤝 समन्वय (Harmony)</span>
+<div class="p-3.5 sm:p-4 bg-white rounded-xl border border-outline-variant/30">
+<span class="text-secondary font-bold block text-xs sm:text-sm mb-1">🤝 समन्वय (Harmony)</span>
 <p class="text-xs text-on-surface-variant">सर्व धर्म दिवाकर के रूप में समाज में एकता व समरसता।</p>
 </div>
 </div>
@@ -290,24 +296,24 @@
 </section>
 <!-- INSTITUTIONS & WORKS FOUNDED -->
 <section class="mb-section-gap" id="institutions">
-<div class="text-center max-w-2xl mx-auto mb-12">
+<div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
 <span class="text-secondary font-bold text-xs uppercase tracking-widest block mb-2">सेवा के जीवंत केंद्र</span>
-<h2 class="font-headline-xl text-3xl sm:text-4xl text-primary font-bold">प्रमुख सामाजिक एवं धार्मिक संस्थाएं</h2>
-<p class="text-on-surface-variant text-sm mt-2">
+<h2 class="font-headline-xl text-2xl sm:text-4xl text-primary font-bold">प्रमुख सामाजिक एवं धार्मिक संस्थाएं</h2>
+<p class="text-on-surface-variant text-xs sm:text-sm mt-2">
                     पूज्य गुरुदेव डॉ. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी महाराज साहब के सानिध्य में स्थापित संस्थाएं
                 </p>
 </div>
 <!-- Featured: J.D. Nirale Baba Public School with authentic logo -->
-<div class="mb-8 bg-gradient-to-r from-surface-container-low to-surface-container rounded-2xl p-6 lg:p-8 border-2 border-primary/20 shadow-md">
-<div class="flex flex-col sm:flex-row items-center gap-6">
-<div class="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 bg-white rounded-2xl p-2 shadow-md border border-outline-variant/30 flex items-center justify-center">
+<div class="mb-8 bg-gradient-to-r from-surface-container-low to-surface-container rounded-2xl p-5 sm:p-6 lg:p-8 border-2 border-primary/20 shadow-md">
+<div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+<div class="w-28 h-28 sm:w-40 sm:h-40 flex-shrink-0 bg-white rounded-2xl p-2 shadow-md border border-outline-variant/30 flex items-center justify-center">
 <img alt="J.D. Nirale Baba Public School Logo - Talwandi Sabo" class="max-w-full max-h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VYeecTdvYT2HEoYAjdFdIQkV8LaFxKlafKymHsfBACpws5WV0IJS6kXj8v6Xb8Jc0rKfQW81asQAUGWHx2NhrJjS8iwW6MFJaWzmPjEVtmUsI_Fpv6-cOh2beclwrrrSHtcxAlAmxcY-B_rOp0BG52pga0ERjPzqv-Whg6g2B0BxDgJzynnoQ4ZYrdZiwoxlrzNcAfL2oQdWxtpddamWh5qdeVPKmh9dXcxt4MjmF4ZSiqGUk1wV-3_lTsUPExMGsx5rOpgaP_9HU">
 </div>
 <div class="space-y-2 text-center sm:text-left">
-<div class="inline-flex items-center gap-2 bg-primary text-on-primary text-xs px-3 py-1 rounded-full font-semibold">
+<div class="inline-flex items-center gap-2 bg-primary text-on-primary text-[11px] sm:text-xs px-3 py-1 rounded-full font-semibold">
 <span class="">विद्या विनयेन् शोभते</span>
 </div>
-<h3 class="font-headline-lg text-2xl text-primary font-bold">J.D. निराले बाबा पब्लिक स्कूल</h3>
+<h3 class="font-headline-lg text-xl sm:text-2xl text-primary font-bold">J.D. निराले बाबा पब्लिक स्कूल</h3>
 <p class="text-xs sm:text-sm font-semibold text-secondary">मलकाना रोड़, तलवंडी साबो, जिला—बठिंडा (पंजाब)</p>
 <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-3xl">
                             ग्रामीण क्षेत्र में बच्चों को आधुनिक शिक्षा के साथ-साथ नैतिक मूल्य, धर्म-संस्कार और अहिंसा की भावना सिखाने के पावन उद्देश्य से स्थापित उत्कृष्ट शिक्षण संस्थान।
@@ -316,52 +322,52 @@
 </div>
 </div>
 <!-- Grid of Institutions -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+<div class="p-4 sm:p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
 <div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center mb-3">
 <span class="material-symbols-outlined">temple_hindu</span>
 </div>
-<h4 class="font-bold text-primary text-base mb-1">दिव्यानंद निराले बाबा जैन तीर्थ</h4>
+<h4 class="font-bold text-primary text-sm sm:text-base mb-1">दिव्यानंद निराले बाबा जैन तीर्थ</h4>
 <p class="text-xs text-secondary font-medium mb-2">ग्राम—किस्तुरिया, तहसील—लूणकरणसर, जिला—बीकानेर (राजस्थान)</p>
 <p class="text-xs text-on-surface-variant">भव्य जैन तीर्थ स्थल जो श्रद्धालुओं के लिए आध्यात्मिक साधना और शांति का पावन केंद्र है।</p>
 </div>
-<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+<div class="p-4 sm:p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
 <div class="w-10 h-10 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center mb-3">
 <span class="material-symbols-outlined">flutter_dash</span>
 </div>
-<h4 class="font-bold text-primary text-base mb-1">निराले बाबा पक्षी आवास गृह एवं पक्षी हॉस्पिटल</h4>
+<h4 class="font-bold text-primary text-sm sm:text-base mb-1">निराले बाबा पक्षी आवास गृह एवं पक्षी हॉस्पिटल</h4>
 <p class="text-xs text-secondary font-medium mb-2">मलकाना रोड़, तलवंडी साबो, जिला—बठिंडा (पंजाब)</p>
 <p class="text-xs text-on-surface-variant">घायल एवं अस्वस्थ पक्षियों के लिए आधुनिक चिकित्सा, दाना-पानी और सुरक्षित प्राकृतिक आश्रय।</p>
 </div>
-<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+<div class="p-4 sm:p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
 <div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center mb-3">
 <span class="material-symbols-outlined">pets</span>
 </div>
-<h4 class="font-bold text-primary text-base mb-1">निराले बाबा गौधाम (गौशाला)</h4>
+<h4 class="font-bold text-primary text-sm sm:text-base mb-1">निराले बाबा गौधाम (गौशाला)</h4>
 <p class="text-xs text-secondary font-medium mb-2">ग्राम—भदौड़, जिला—बरनाला (पंजाब)</p>
 <p class="text-xs text-on-surface-variant">बेसहारा व निराश्रित गौवंश की निःशुल्क सेवा, चारा, चिकित्सा और संरक्षण की पुनीत व्यवस्था।</p>
 </div>
 </div>
-<div class="mt-8 text-center">
-<a href="trust-works.html" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+<div class="mt-6 sm:mt-8 text-center">
+<a href="trust-works.html" class="inline-flex items-center gap-2 text-primary font-bold hover:underline text-xs sm:text-base">
 <span>View Complete Roster of 12 Institutions</span>
 <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
 </section>
 <!-- CTA SECTION -->
-<section class="mb-section-gap bg-surface-container-highest rounded-3xl p-8 lg:p-12 text-center border border-primary/10">
-<h3 class="font-headline-xl text-3xl sm:text-4xl text-primary font-bold mb-4">
+<section class="mb-section-gap bg-surface-container-highest rounded-3xl p-6 sm:p-8 lg:p-12 text-center border border-primary/10">
+<h3 class="font-headline-xl text-2xl sm:text-4xl text-primary font-bold mb-3 sm:mb-4">
                 जीव-दया के इस पावन महायज्ञ से जुड़ें
             </h3>
-<p class="text-on-surface-variant max-w-2xl mx-auto mb-8 text-base leading-relaxed">
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-6 sm:mb-8 text-xs sm:text-base leading-relaxed">
                 पूज्य गुरुदेव डॉ. दिव्यानन्द सूरीश्वर जी महाराज साहब के सानिध्य में चल रहे पक्षी चिकित्सालयों, गौशालाओं एवं विद्यालयों में अपना सहयोग प्रदान कर पुण्य के भागी बनें।
             </p>
-<div class="flex flex-wrap gap-4 justify-center">
-<a class="bg-primary hover:bg-primary-container text-on-primary px-8 py-3.5 rounded-full font-bold shadow-md transition-all text-sm" href="donation.html">
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+<a class="bg-primary hover:bg-primary-container text-on-primary px-7 py-3 sm:py-3.5 rounded-full font-bold shadow-md transition-all text-xs sm:text-sm w-full sm:w-auto" href="donation.html">
                     सहयोग राशि समर्पित करें
                 </a>
-<a class="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3.5 rounded-full font-bold transition-all text-sm" href="#blessings">
+<a class="border-2 border-primary text-primary hover:bg-primary/5 px-7 py-3 sm:py-3.5 rounded-full font-bold transition-all text-xs sm:text-sm w-full sm:w-auto" href="#blessings">
                     अधिकृत पोस्टर देखें
                 </a>
 </div>
@@ -369,17 +375,16 @@
 </main>
 <!-- FOOTER (Unified) -->
 <footer class="bg-surface-container-highest w-full border-t-4 border-tertiary-container" id="contact">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-container-max mx-auto px-margin-page py-14">
-<!-- Trust Details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page py-10 sm:py-14">
 <div class="lg:col-span-5">
 <div class="flex items-center gap-2 mb-3">
 <span class="text-xl text-primary font-bold">卐</span>
-<span class="font-headline-md font-bold text-primary text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+<span class="font-headline-md font-bold text-primary text-lg sm:text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
 </div>
 <p class="text-xs font-semibold text-secondary uppercase tracking-widest mb-3">
                 SARVESH DIVYA CHARITABLE TRUST (Regd. No. 396)
             </p>
-<p class="font-body-md text-sm text-on-surface-variant mb-6 max-w-md">
+<p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-5 max-w-md">
                 Established under the guidance of Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb (Nirale Baba) for avian hospitals, gaushalas, schools, and pilgrimage centers.
             </p>
 <div class="space-y-2 text-xs text-on-surface-variant">
@@ -397,11 +402,10 @@
 </p>
 </div>
 </div>
-<!-- Quick Links -->
-<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Key Centers</h4>
-<ul class="space-y-2 text-xs text-on-surface-variant">
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Key Centers</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-xs text-on-surface-variant">
 <li class="">• J.D. Nirale Baba School</li>
 <li class="">• Talwandi Sabo Bird Hospital</li>
 <li class="">• Kisturiya Jain Tirth (Bikaner)</li>
@@ -411,8 +415,8 @@
 </ul>
 </div>
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Quick Navigation</h4>
-<ul class="space-y-2 text-xs text-on-surface-variant">
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Quick Navigation</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-xs text-on-surface-variant">
 <li class=""><a class="hover:text-primary transition-colors" href="index.html">• Home</a></li>
 <li class=""><a class="hover:text-primary transition-colors" href="trust-works.html">• Trust Works</a></li>
 <li class=""><a class="hover:text-primary transition-colors" href="about-guruji.html">• About Guruji</a></li>
@@ -421,7 +425,7 @@
 </ul>
 </div>
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Tax Exemption</h4>
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Tax Exemption</h4>
 <div class="bg-white/80 p-3 rounded-lg border border-outline-variant/40 text-xs text-on-surface-variant space-y-1">
 <p class="font-bold text-primary">80G Income Tax Benefit</p>
 <p class="text-[11px] leading-relaxed">Exempted u/s 11 clause (i) of first proviso to subsection (5) of 80G of INCOME TAX Act 1961.</p>
@@ -430,7 +434,7 @@
 </div>
 </div>
 </div>
-<div class="max-w-container-max mx-auto px-margin-page pb-8 border-t border-outline-variant/30 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
+<div class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page pb-6 sm:pb-8 border-t border-outline-variant/30 pt-5 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 text-center">
 <p class="text-xs text-on-surface-variant">
             © 2024 Sarvesh Divya Charitable Trust. Regd No. 396 (Bathinda, Punjab). All Rights Reserved.
         </p>

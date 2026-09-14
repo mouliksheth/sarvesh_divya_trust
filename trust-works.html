@@ -70,7 +70,7 @@
                     "container-max": "1280px",
                     "gutter": "24px",
                     "unit": "8px",
-                    "section-gap": "120px"
+                    "section-gap": "clamp(40px, 6vw, 120px)"
             },
             "fontFamily": {
                     "body-md": ["Manrope", "sans-serif"],
@@ -102,35 +102,41 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background: white;
-            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 1.25rem 1.5rem;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            z-index: 40;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            z-index: 50;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
         }
     </style>
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopAppBar (Unified) -->
 <header class="bg-surface/95 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
-<div class="max-w-container-max mx-auto flex justify-between items-center px-margin-page h-20 relative">
-<a href="index.html" class="flex items-center gap-3">
-<span class="text-2xl text-primary font-bold">卐</span>
+<div class="max-w-container-max mx-auto flex justify-between items-center px-4 sm:px-6 md:px-margin-page h-16 md:h-20 relative">
+<a href="index.html" class="flex items-center gap-2.5 sm:gap-3">
+<span class="text-xl sm:text-2xl text-primary font-bold shrink-0">卐</span>
 <div class="flex flex-col">
-<span class="font-headline-md font-bold text-primary tracking-tight leading-tight">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
-<span class="text-xs font-semibold text-secondary tracking-wider uppercase">Sarvesh Divya Charitable Trust (Regd. 396)</span>
+<span class="font-headline-md font-bold text-primary tracking-tight leading-tight text-base sm:text-lg md:text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+<span class="text-[10px] sm:text-xs font-semibold text-secondary tracking-wider uppercase">Sarvesh Divya Charitable Trust (Regd. 396)</span>
 </div>
 </a>
 <input class="hidden peer" id="mobile-menu-toggle" type="checkbox">
-<label class="md:hidden p-2 text-primary cursor-pointer" for="mobile-menu-toggle">
+<label class="md:hidden p-2 text-primary hover:bg-primary/5 rounded-lg active:scale-95 transition-all cursor-pointer" for="mobile-menu-toggle">
 <span class="material-symbols-outlined text-2xl">menu</span>
 </label>
-<nav class="hidden md:flex items-center gap-6 lg:gap-8 bg-surface md:bg-transparent absolute md:relative top-20 md:top-0 left-0 w-full md:w-auto p-6 md:p-0 flex-col md:flex-row border-b md:border-0 border-outline-variant/30 shadow-lg md:shadow-none peer-checked:flex">
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-<a class="font-label-sm font-semibold text-primary border-b-2 border-primary pb-1" href="trust-works.html">Trust Works</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="about-guruji.html">About Guruji</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="donation.html">Donation</a>
-<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
-<a class="md:hidden w-full text-center bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm mt-4 shadow" href="donation.html">Donate Now</a>
+<nav class="hidden md:flex items-center gap-5 lg:gap-8 bg-surface md:bg-transparent absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto p-5 md:p-0 flex-col md:flex-row border-b md:border-0 border-outline-variant/30 shadow-lg md:shadow-none peer-checked:flex">
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="index.html">Home</a>
+<a class="font-label-sm font-semibold text-primary border-b-2 border-primary pb-1 w-full md:w-auto text-left md:text-center" href="trust-works.html">Trust Works</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="about-guruji.html">About Guruji</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="donation.html">Donation</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors w-full md:w-auto text-left md:text-center" href="contact.html">Contact</a>
+<a class="md:hidden w-full text-center bg-primary text-on-primary px-6 py-3 rounded-xl font-label-sm mt-3 shadow-md flex items-center justify-center gap-2 font-bold" href="donation.html">
+<span class="material-symbols-outlined text-lg">volunteer_activism</span> Donate Now
+</a>
 </nav>
 <a class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-sm hover:bg-primary-container transition-all shadow-sm active:scale-95" href="donation.html">
 <span class="material-symbols-outlined text-base">volunteer_activism</span>
@@ -138,31 +144,31 @@
 </a>
 </div>
 </header>
-<main class="max-w-container-max mx-auto px-margin-page py-10 md:py-14">
+<main class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page py-8 sm:py-10 md:py-14">
 <!-- Hero Section with Guru Pranam Header -->
-<header class="mb-12 md:mb-16 text-center max-w-4xl mx-auto">
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed text-xs font-bold uppercase tracking-wider mb-4 border border-secondary-fixed-dim/60">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<header class="mb-10 sm:mb-12 md:mb-16 text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-secondary-fixed-dim/60">
+<span class="material-symbols-outlined text-xs sm:text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
 समन्वय मिशन के संस्थापक • पंजाब मालवा केसरी
 </div>
-<h1 class="font-headline-xl text-3xl md:text-5xl text-on-surface mb-4 font-bold tracking-tight">
+<h1 class="font-headline-xl text-2xl sm:text-4xl md:text-5xl text-on-surface mb-3 sm:mb-4 font-bold tracking-tight">
 Our Sacred Institutions &amp; Works
 </h1>
-<p class="text-base md:text-lg text-tertiary font-medium mb-3">
+<p class="text-xs sm:text-base md:text-lg text-tertiary font-medium mb-2 sm:mb-3">
 राष्ट्रसंत, सर्व धर्म दिवाकर, Dr. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी महाराज साहब (निराले बाबा) के मार्गदर्शन व सद् प्रेरणा से निर्मित प्रमुख सामाजिक एवं धार्मिक संस्थाएँ
 </p>
-<p class="text-sm md:text-base text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+<p class="text-xs sm:text-sm md:text-base text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
 All 12 authentic establishments serving Jeev Daya (animal &amp; bird welfare), Vidya Dan (education), and spiritual awakening across Punjab, Rajasthan, Haryana, and Madhya Pradesh.
 </p>
 </header>
 <!-- Inspirational Guru & School Featured Hero Highlight -->
-<section class="mb-14 bg-gradient-to-br from-surface-container-low via-surface-container to-surface-container-high rounded-2xl border border-outline-variant/40 p-6 md:p-8 shadow-sm">
-<div class="grid md:grid-cols-12 gap-8 items-center">
-<div class="md:col-span-4 flex flex-col items-center text-center p-4 bg-surface rounded-xl border border-outline-variant/30 shadow-sm">
-<img alt="Shree Mad Divyanand Surishwar Ji Maharaj (Nirale Baba)" class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-primary shadow-md mb-3" src="https://lh3.googleusercontent.com/aida/AEtjO1WCMYl0e4_Q8mKx7VR8QwFDisXuMYSzoPo1QNeD_QtAL4aviavF806WuJuDdYczJFcDH3bbSGRfyCvutBgpxBCAPR3aapba2vvY3GwO0jEs7Pwb3vSAvThZxLIknTaQdYsUaWNRoloX-s44a5syVbBk_OGFHS4HzqlYDzMNVBL3m0JH9rGrbEY4L2l3Xqhmiouce8GaoBv5S0ZTVaGsA80KRDZyWHbaPapC8P9Ro-KlcllNeQmEx1wDP4rm65o8onOiOr6s0z51bQ">
-<h3 class="font-headline-md text-lg font-bold text-primary">श्री मद् दिव्यानन्द सूरीश्वर जी</h3>
-<p class="text-xs font-semibold text-secondary uppercase tracking-wider">(निराले बाबा महाराज)</p>
-<p class="text-xs text-on-surface-variant mt-2 max-w-xs italic">"बीकाणा पंजाब गौरव, क्रांतिकारी, कश्मीर केसरी, अग्रवाल समाज सुधारक"</p>
+<section class="mb-10 sm:mb-14 bg-gradient-to-br from-surface-container-low via-surface-container to-surface-container-high rounded-2xl border border-outline-variant/40 p-4 sm:p-6 md:p-8 shadow-sm">
+<div class="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
+<div class="md:col-span-4 flex flex-col items-center text-center p-3.5 sm:p-4 bg-surface rounded-xl border border-outline-variant/30 shadow-sm">
+<img alt="Shree Mad Divyanand Surishwar Ji Maharaj (Nirale Baba)" class="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full object-cover border-4 border-primary shadow-md mb-2 sm:mb-3" src="https://lh3.googleusercontent.com/aida/AEtjO1WCMYl0e4_Q8mKx7VR8QwFDisXuMYSzoPo1QNeD_QtAL4aviavF806WuJuDdYczJFcDH3bbSGRfyCvutBgpxBCAPR3aapba2vvY3GwO0jEs7Pwb3vSAvThZxLIknTaQdYsUaWNRoloX-s44a5syVbBk_OGFHS4HzqlYDzMNVBL3m0JH9rGrbEY4L2l3Xqhmiouce8GaoBv5S0ZTVaGsA80KRDZyWHbaPapC8P9Ro-KlcllNeQmEx1wDP4rm65o8onOiOr6s0z51bQ">
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-primary">श्री मद् दिव्यानन्द सूरीश्वर जी</h3>
+<p class="text-[11px] sm:text-xs font-semibold text-secondary uppercase tracking-wider">(निराले बाबा महाराज)</p>
+<p class="text-[11px] sm:text-xs text-on-surface-variant mt-1.5 sm:mt-2 max-w-xs italic">"बीकाणा पंजाब गौरव, क्रांतिकारी, कश्मीर केसरी, अग्रवाल समाज सुधारक"</p>
 </div>
 <div class="md:col-span-8 flex flex-col justify-between">
 <div>
@@ -170,57 +176,57 @@ All 12 authentic establishments serving Jeev Daya (animal &amp; bird welfare), V
 <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
 Featured Educational Institution (विद्या दान)
 </div>
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4">
 <div>
 <span class="text-xs font-bold text-secondary uppercase tracking-wider">Institution #1</span>
-<h2 class="font-headline-lg text-2xl md:text-3xl text-on-surface font-bold">
+<h2 class="font-headline-lg text-xl sm:text-2xl md:text-3xl text-on-surface font-bold">
 J.D. Nirale Baba Public School
 </h2>
-<p class="text-base text-primary font-semibold">J.D. निराले बाबा पब्लिक स्कूल</p>
+<p class="text-xs sm:text-base text-primary font-semibold">J.D. निराले बाबा पब्लिक स्कूल</p>
 </div>
 <div class="shrink-0 bg-white p-2 rounded-xl border border-outline-variant/40 shadow-sm inline-block self-start sm:self-auto">
-<img alt="J.D. Nirale Baba Public School Official Crest Logo" class="h-20 w-20 md:h-24 md:w-24 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VYeecTdvYT2HEoYAjdFdIQkV8LaFxKlafKymHsfBACpws5WV0IJS6kXj8v6Xb8Jc0rKfQW81asQAUGWHx2NhrJjS8iwW6MFJaWzmPjEVtmUsI_Fpv6-cOh2beclwrrrSHtcxAlAmxcY-B_rOp0BG52pga0ERjPzqv-Whg6g2B0BxDgJzynnoQ4ZYrdZiwoxlrzNcAfL2oQdWxtpddamWh5qdeVPKmh9dXcxt4MjmF4ZSiqGUk1wV-3_lTsUPExMGsx5rOpgaP_9HU">
+<img alt="J.D. Nirale Baba Public School Official Crest Logo" class="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VYeecTdvYT2HEoYAjdFdIQkV8LaFxKlafKymHsfBACpws5WV0IJS6kXj8v6Xb8Jc0rKfQW81asQAUGWHx2NhrJjS8iwW6MFJaWzmPjEVtmUsI_Fpv6-cOh2beclwrrrSHtcxAlAmxcY-B_rOp0BG52pga0ERjPzqv-Whg6g2B0BxDgJzynnoQ4ZYrdZiwoxlrzNcAfL2oQdWxtpddamWh5qdeVPKmh9dXcxt4MjmF4ZSiqGUk1wV-3_lTsUPExMGsx5rOpgaP_9HU">
 </div>
 </div>
-<div class="bg-primary-fixed/40 p-3.5 rounded-lg border border-primary-fixed-dim/60 mb-4 flex items-start gap-3">
-<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">location_on</span>
+<div class="bg-primary-fixed/40 p-3 sm:p-3.5 rounded-lg border border-primary-fixed-dim/60 mb-3 sm:mb-4 flex items-start gap-2.5 sm:gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5 text-lg sm:text-xl">location_on</span>
 <div>
-<p class="font-bold text-on-primary-fixed text-sm md:text-base">Malkana Road, Talwandi Sabo, Dist. Bathinda (Punjab)</p>
-<p class="text-xs text-on-primary-fixed-variant">मलकाना रोड़, तलवंडी साबो, जिला—बठिंडा (पंजाब)</p>
+<p class="font-bold text-on-primary-fixed text-xs sm:text-base">Malkana Road, Talwandi Sabo, Dist. Bathinda (Punjab)</p>
+<p class="text-[11px] sm:text-xs text-on-primary-fixed-variant">मलकाना रोड़, तलवंडी साबो, जिला—बठिंडा (पंजाब)</p>
 </div>
 </div>
 </div>
-<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-outline-variant/30">
-<div class="inline-flex items-center gap-2 bg-secondary-fixed/70 text-on-secondary-fixed px-3 py-1.5 rounded-md font-bold text-xs">
-<span class="material-symbols-outlined text-sm">auto_stories</span>
+<div class="flex flex-wrap items-center justify-between gap-2.5 pt-3 border-t border-outline-variant/30">
+<div class="inline-flex items-center gap-1.5 bg-secondary-fixed/70 text-on-secondary-fixed px-2.5 py-1 rounded-md font-bold text-[11px] sm:text-xs">
+<span class="material-symbols-outlined text-xs sm:text-sm">auto_stories</span>
 आदर्श वाक्य: विद्या विनयेन् शोभते
 </div>
-<span class="text-xs font-medium text-on-surface-variant">Affiliated with Sarvesh Divya Trust (Regd. No. 396)</span>
+<span class="text-[11px] sm:text-xs font-medium text-on-surface-variant">Affiliated with Sarvesh Divya Trust (Regd. No. 396)</span>
 </div>
 </div>
 </div>
 </section>
 <!-- Section 1: Complete Roster of 12 Authentic Institutions -->
-<section class="mb-16">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-3 border-b border-outline-variant/40 gap-3">
+<section class="mb-12 sm:mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-3 border-b border-outline-variant/40 gap-2 sm:gap-3">
 <div>
 <span class="text-secondary font-label-sm uppercase tracking-widest block font-bold text-xs">Certified Field Directory</span>
-<h2 class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface">The 12 Sacred Establishments</h2>
+<h2 class="font-headline-lg text-xl sm:text-2xl md:text-3xl font-bold text-on-surface">The 12 Sacred Establishments</h2>
 </div>
-<p class="text-xs md:text-sm text-on-surface-variant max-w-md">
+<p class="text-xs sm:text-sm text-on-surface-variant max-w-md">
 Directly recorded from the official public roster under the benign guidance of Nirale Baba Ji.
 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 <!-- Card 1: J.D. School -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-primary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-primary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">#1 • School</span>
 <span class="material-symbols-outlined text-primary">school</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">J.D. Nirale Baba Public School</h3>
-<p class="text-sm font-semibold text-primary mb-3">J.D. निराले बाबा पब्लिक स्कूल</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">J.D. Nirale Baba Public School</h3>
+<p class="text-xs sm:text-sm font-semibold text-primary mb-3">J.D. निराले बाबा पब्लिक स्कूल</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -235,14 +241,14 @@ Motto: विद्या विनयेन् शोभते
 </div>
 </article>
 <!-- Card 2: Divyanand Nirale Baba Jain Tirth -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-tertiary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-tertiary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">#2 • Jain Tirth</span>
 <span class="material-symbols-outlined text-tertiary">temple_hindu</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">Divyanand Nirale Baba Jain Tirth</h3>
-<p class="text-sm font-semibold text-tertiary mb-3">दिव्यानंद निराले बाबा जैन तीर्थ</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">Divyanand Nirale Baba Jain Tirth</h3>
+<p class="text-xs sm:text-sm font-semibold text-tertiary mb-3">दिव्यानंद निराले बाबा जैन तीर्थ</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -257,14 +263,14 @@ Holy Jain pilgrimage &amp; meditation center
 </div>
 </article>
 <!-- Card 3: Nirale Baba Gaudham Bhadaur -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-secondary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-secondary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">#3 • Gau Seva</span>
 <span class="material-symbols-outlined text-secondary">agriculture</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">Nirale Baba Gaudham (Gaushala)</h3>
-<p class="text-sm font-semibold text-secondary mb-3">निराले बाबा गौधाम (गौशाला)</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">Nirale Baba Gaudham (Gaushala)</h3>
+<p class="text-xs sm:text-sm font-semibold text-secondary mb-3">निराले बाबा गौधाम (गौशाला)</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -279,14 +285,14 @@ Comprehensive cow shelter, fodder &amp; veterinary care
 </div>
 </article>
 <!-- Card 4: Nirale Baba Mandir Barnala -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-tertiary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-tertiary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">#4 • Mandir</span>
 <span class="material-symbols-outlined text-tertiary">wb_sunny</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">Nirale Baba Mandir</h3>
-<p class="text-sm font-semibold text-tertiary mb-3">निराले बाबा मंदिर</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">Nirale Baba Mandir</h3>
+<p class="text-xs sm:text-sm font-semibold text-tertiary mb-3">निराले बाबा मंदिर</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -301,14 +307,14 @@ Satsang hall, daily worship &amp; spiritual discourse
 </div>
 </article>
 <!-- Card 5: Nirale Baba Pakshi Awas Grih evam Pakshi Hospital Talwandi Sabo -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-primary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-primary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">#5 • Bird Hospital</span>
 <span class="material-symbols-outlined text-primary">flutter_dash</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1 leading-snug">Pakshi Awas Grih evam Pakshi Hospital</h3>
-<p class="text-sm font-semibold text-primary mb-3">निराले बाबा पक्षी आवास गृह एवं पक्षी हॉस्पिटल</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Pakshi Awas Grih evam Pakshi Hospital</h3>
+<p class="text-xs sm:text-sm font-semibold text-primary mb-3">निराले बाबा पक्षी आवास गृह एवं पक्षी हॉस्पिटल</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -323,14 +329,14 @@ Sanctuary for injured wild birds with ICUs &amp; feeding towers
 </div>
 </article>
 <!-- Card 6: Divyanand Nirale Baba Pakshi Hospital Sri Karanpur -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-primary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-primary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">#6 • Bird Hospital</span>
 <span class="material-symbols-outlined text-primary">flutter_dash</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1 leading-snug">Divyanand Nirale Baba Pakshi Hospital</h3>
-<p class="text-sm font-semibold text-primary mb-3">दिव्यानंद निराले बाबा पक्षी हॉस्पिटल</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Divyanand Nirale Baba Pakshi Hospital</h3>
+<p class="text-xs sm:text-sm font-semibold text-primary mb-3">दिव्यानंद निराले बाबा पक्षी हॉस्पिटल</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -345,14 +351,14 @@ Emergency surgical unit &amp; convalescent avian shelter
 </div>
 </article>
 <!-- Card 7: J.D. Nirale Baba Mandir Bhawanigarh -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-tertiary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-tertiary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">#7 • Mandir</span>
 <span class="material-symbols-outlined text-tertiary">wb_sunny</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">J.D. Nirale Baba Mandir</h3>
-<p class="text-sm font-semibold text-tertiary mb-3">J.D. निराले बाबा मंदिर</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">J.D. Nirale Baba Mandir</h3>
+<p class="text-xs sm:text-sm font-semibold text-tertiary mb-3">J.D. निराले बाबा मंदिर</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -367,14 +373,14 @@ Center for community congregation &amp; Vedic rites
 </div>
 </article>
 <!-- Card 8: Nirale Baba Gauvansh Pakshi Hospital Sujangarh -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-secondary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-secondary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">#8 • Gau &amp; Pakshi Care</span>
 <span class="material-symbols-outlined text-secondary">healing</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1 leading-snug">Gauvansh Pakshi Hospital</h3>
-<p class="text-sm font-semibold text-secondary mb-3">निराले बाबा गौवंश पक्षी हॉस्पिटल</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Gauvansh Pakshi Hospital</h3>
+<p class="text-xs sm:text-sm font-semibold text-secondary mb-3">निराले बाबा गौवंश पक्षी हॉस्पिटल</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -389,14 +395,14 @@ Dual-facility treating stray cattle &amp; injured birds
 </div>
 </article>
 <!-- Card 9: Nirale Baba Gaushala Babanpur -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-secondary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-secondary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">#9 • Gau Seva</span>
 <span class="material-symbols-outlined text-secondary">agriculture</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">Nirale Baba Gaushala</h3>
-<p class="text-sm font-semibold text-secondary mb-3">निराले बाबा गौशाला</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">Nirale Baba Gaushala</h3>
+<p class="text-xs sm:text-sm font-semibold text-secondary mb-3">निराले बाबा गौशाला</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -411,14 +417,14 @@ Dedicated gaushala providing green fodder &amp; hospice
 </div>
 </article>
 <!-- Card 10: Nirale Baba Jain Bhavan Sangaria Mandi -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-tertiary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-tertiary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">#10 • Community Bhavan</span>
 <span class="material-symbols-outlined text-tertiary">apartment</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">Nirale Baba Jain Bhavan</h3>
-<p class="text-sm font-semibold text-tertiary mb-3">निराले बाबा जैन भवन</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1">Nirale Baba Jain Bhavan</h3>
+<p class="text-xs sm:text-sm font-semibold text-tertiary mb-3">निराले बाबा जैन भवन</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -433,14 +439,14 @@ Community hall for sadhu-sadhvi vishram and samaj seva
 </div>
 </article>
 <!-- Card 11: Nirale Baba Mandir evam Pakshi Awas Grih Budhlada -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-primary border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-primary border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">#11 • Mandir &amp; Awas</span>
 <span class="material-symbols-outlined text-primary">flutter_dash</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1 leading-snug">Mandir evam Pakshi Awas Grih</h3>
-<p class="text-sm font-semibold text-primary mb-3">निराले बाबा मंदिर एवं पक्षी आवास गृह</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Mandir evam Pakshi Awas Grih</h3>
+<p class="text-xs sm:text-sm font-semibold text-primary mb-3">निराले बाबा मंदिर एवं पक्षी आवास गृह</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -455,14 +461,14 @@ Co-located spiritual prayer temple and bird shelter
 </div>
 </article>
 <!-- Card 12: Divyanand Nirale Baba Pashu-Pakshi Hospital Dhamnod-Sailana -->
-<article class="institution-card bg-surface-container-lowest rounded-xl p-6 border-t-4 border-secondary-container border border-outline-variant/30 flex flex-col justify-between">
+<article class="institution-card bg-surface-container-lowest rounded-xl p-5 sm:p-6 border-t-4 border-secondary-container border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-3">
 <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">#12 • Pashu-Pakshi Hospital</span>
 <span class="material-symbols-outlined text-secondary">medication</span>
 </div>
-<h3 class="font-headline-md text-lg font-bold text-on-surface mb-1 leading-snug">Pashu-Pakshi Hospital</h3>
-<p class="text-sm font-semibold text-secondary mb-3">दिव्यानंद निराले बाबा पशु-पक्षी हॉस्पिटल</p>
+<h3 class="font-headline-md text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Pashu-Pakshi Hospital</h3>
+<p class="text-xs sm:text-sm font-semibold text-secondary mb-3">दिव्यानंद निराले बाबा पशु-पक्षी हॉस्पिटल</p>
 <div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/20 mb-3 flex gap-2.5 items-start">
 <span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">pin_drop</span>
 <div>
@@ -479,94 +485,83 @@ Highway emergency trauma and bird treatment center
 </div>
 </section>
 <!-- Section 2: Authentic Official Poster Display & Inspection -->
-<section class="mb-16 bg-surface-container-low rounded-2xl border border-outline-variant/40 p-6 md:p-10" id="poster">
-<div class="text-center max-w-2xl mx-auto mb-8">
+<section class="mb-12 sm:mb-16 bg-surface-container-low rounded-2xl border border-outline-variant/40 p-4 sm:p-8 md:p-10" id="poster">
+<div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
 <span class="text-secondary font-label-sm uppercase tracking-widest block mb-2 font-bold text-xs">Official Archival Document</span>
-<h2 class="font-headline-lg text-2xl md:text-3xl font-bold text-on-surface mb-3">Official Trust Publication Poster</h2>
+<h2 class="font-headline-lg text-xl sm:text-3xl font-bold text-on-surface mb-2 sm:mb-3">Official Trust Publication Poster</h2>
 <p class="text-xs md:text-sm text-on-surface-variant">
 Published on the auspicious 75th year celebrations of Shri Aadishwar Mandal, Bikaner. High-resolution document certifying all 12 institutions and verified banking records.
 </p>
 </div>
-<div class="max-w-3xl mx-auto bg-white p-3 md:p-4 rounded-xl border-2 border-outline-variant/40 shadow-md">
+<div class="max-w-3xl mx-auto bg-white p-2.5 sm:p-4 rounded-xl border-2 border-outline-variant/40 shadow-md">
 <div class="relative group overflow-hidden rounded-lg">
 <img alt="Official Poster - Sarvesh Divya Charitable Trust 12 Institutions and Banking Details" class="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk">
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-<span class="bg-surface text-on-surface px-4 py-2 rounded-lg text-xs font-bold shadow-lg flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">zoom_in</span> Official Archival Poster (1334x1600)
-</span>
-</div>
-</div>
-<div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-2 text-xs text-on-surface-variant">
-<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary">verified</span> Authentic archival document from trust records</span>
-<a class="inline-flex items-center gap-1.5 text-primary font-bold hover:underline" href="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk" target="_blank">
-<span class="material-symbols-outlined text-base">open_in_new</span> View Full Resolution Image
-</a>
 </div>
 </div>
 </section>
 <!-- Section 3: Official Bank Donation Section (Verified from Poster) -->
-<section class="bg-gradient-to-br from-secondary-fixed/30 via-surface-container to-primary-fixed/20 rounded-2xl p-6 md:p-10 border-2 border-secondary-container shadow-sm relative overflow-hidden" id="donation">
+<section class="bg-gradient-to-br from-secondary-fixed/30 via-surface-container to-primary-fixed/20 rounded-2xl p-5 sm:p-8 md:p-10 border-2 border-secondary-container shadow-sm relative overflow-hidden" id="donation">
 <div class="max-w-5xl mx-auto">
-<div class="text-center mb-8">
-<div class="inline-block bg-secondary text-on-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+<div class="text-center mb-6 sm:mb-8">
+<div class="inline-block bg-secondary text-on-secondary px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
 - Donation for -
 </div>
-<h2 class="font-headline-xl text-2xl md:text-4xl text-on-surface font-bold mb-2">
+<h2 class="font-headline-xl text-xl sm:text-3xl md:text-4xl text-on-surface font-bold mb-1.5 sm:mb-2">
 SARVESH DIVYA CHARITABLE TRUST
 </h2>
-<p class="text-sm md:text-base font-semibold text-secondary">
+<p class="text-xs sm:text-base font-semibold text-secondary">
 Bathinda (Punjab) • Regd. No. 396
 </p>
-<p class="text-xs md:text-sm text-on-surface-variant mt-1">
+<p class="text-[11px] sm:text-sm text-on-surface-variant mt-1">
 Amount Donated to this trust is exempted u/s 11 clause (i) of first proviso to subsection (5) of 80G of INCOME TAX Act 1961
 <br class="hidden md:inline">
 vide Document No. <strong>AAHTS4077QF2021101</strong>, Date: <strong>02-10-2021</strong> • PAN No. <strong>AAHTS4077Q</strong>
 </p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
 <!-- Left: Verified Bank Account Details -->
-<div class="lg:col-span-7 space-y-4">
-<div class="bg-white p-5 rounded-xl border border-outline-variant/40 shadow-sm">
-<span class="text-[11px] font-bold uppercase tracking-widest text-outline block mb-1">Designated Bank</span>
-<p class="font-bold text-on-surface text-base md:text-lg flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">account_balance</span>
+<div class="lg:col-span-7 space-y-3.5 sm:space-y-4">
+<div class="bg-white p-4 sm:p-5 rounded-xl border border-outline-variant/40 shadow-sm">
+<span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-outline block mb-1">Designated Bank</span>
+<p class="font-bold text-on-surface text-sm sm:text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl">account_balance</span>
 State Bank of India, Bathinda (Punjab)
 </p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-white p-4 rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+<div class="bg-white p-3.5 sm:p-4 rounded-xl border border-outline-variant/40 shadow-sm">
 <span class="text-[10px] font-bold uppercase tracking-widest text-outline block mb-1">Account Number</span>
-<p class="font-headline-md text-xl md:text-2xl text-primary font-bold tracking-wider select-all">
+<p class="font-headline-md text-lg sm:text-2xl text-primary font-bold tracking-wider select-all">
 65026931629
 </p>
 <span class="text-[11px] text-on-surface-variant">Savings Bank Account</span>
 </div>
-<div class="bg-white p-4 rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="bg-white p-3.5 sm:p-4 rounded-xl border border-outline-variant/40 shadow-sm">
 <span class="text-[10px] font-bold uppercase tracking-widest text-outline block mb-1">IFSC Code</span>
-<p class="font-headline-md text-xl md:text-2xl text-primary font-bold tracking-wider select-all">
+<p class="font-headline-md text-lg sm:text-2xl text-primary font-bold tracking-wider select-all">
 SBIN0050039
 </p>
 <span class="text-[11px] text-on-surface-variant">SBI Bathinda Branch</span>
 </div>
 </div>
-<div class="bg-white/80 p-4 rounded-xl border border-outline-variant/30 flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary text-2xl shrink-0">call</span>
+<div class="bg-white/80 p-3.5 sm:p-4 rounded-xl border border-outline-variant/30 flex items-center gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-secondary text-xl sm:text-2xl shrink-0">call</span>
 <div class="text-xs">
 <p class="font-bold text-on-surface">Trust Helpline / Contact Mobile</p>
-<p class="text-primary font-semibold text-sm select-all">9872321272</p>
+<p class="text-primary font-semibold text-xs sm:text-sm select-all">9872321272</p>
 </div>
 </div>
 </div>
 <!-- Right: Genuine QR Code Display -->
 <div class="lg:col-span-5 flex flex-col items-center justify-center">
-<div class="bg-white p-5 rounded-2xl shadow-md border-4 border-tertiary-fixed text-center max-w-[280px] w-full">
+<div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md border-4 border-tertiary-fixed text-center max-w-[260px] sm:max-w-[280px] w-full">
 <div class="w-full aspect-square bg-surface-container-lowest flex items-center justify-center p-2 rounded-lg border border-outline-variant/30 overflow-hidden mb-3">
 <div class="w-full h-full relative overflow-hidden rounded">
 <img alt="Official SBI Donation QR Code from Trust Poster" class="w-[300%] max-w-none absolute" src="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk" style="left: -198%; top: -76%;">
 </div>
 </div>
-<p class="font-bold text-sm text-on-surface">Scan with any UPI App</p>
-<p class="text-[11px] text-on-surface-variant">GPay • PhonePe • Paytm • BHIM</p>
+<p class="font-bold text-xs sm:text-sm text-on-surface">Scan with any UPI App</p>
+<p class="text-[10px] sm:text-[11px] text-on-surface-variant">GPay • PhonePe • Paytm • BHIM</p>
 <div class="mt-2 pt-2 border-t border-outline-variant/20 text-[10px] font-semibold text-secondary">
 80G TAX EXEMPTION BENEFIT
 </div>
@@ -578,17 +573,17 @@ SBIN0050039
 </main>
 <!-- Footer (Unified) -->
 <footer class="bg-surface-container-highest w-full border-t-4 border-tertiary-container" id="contact">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-container-max mx-auto px-margin-page py-14">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page py-10 sm:py-14">
 <!-- Trust Details -->
 <div class="lg:col-span-5">
 <div class="flex items-center gap-2 mb-3">
 <span class="text-xl text-primary font-bold">卐</span>
-<span class="font-headline-md font-bold text-primary text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+<span class="font-headline-md font-bold text-primary text-lg sm:text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
 </div>
 <p class="text-xs font-semibold text-secondary uppercase tracking-widest mb-3">
                 SARVESH DIVYA CHARITABLE TRUST (Regd. No. 396)
             </p>
-<p class="font-body-md text-sm text-on-surface-variant mb-6 max-w-md">
+<p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-5 max-w-md">
                 Established under the guidance of Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb (Nirale Baba) for avian hospitals, gaushalas, schools, and pilgrimage centers.
             </p>
 <div class="space-y-2 text-xs text-on-surface-variant">
@@ -607,10 +602,10 @@ SBIN0050039
 </div>
 </div>
 <!-- Quick Links -->
-<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Key Centers</h4>
-<ul class="space-y-2 text-xs text-on-surface-variant">
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Key Centers</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-xs text-on-surface-variant">
 <li class="">• J.D. Nirale Baba School</li>
 <li class="">• Talwandi Sabo Bird Hospital</li>
 <li class="">• Kisturiya Jain Tirth (Bikaner)</li>
@@ -620,8 +615,8 @@ SBIN0050039
 </ul>
 </div>
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Quick Navigation</h4>
-<ul class="space-y-2 text-xs text-on-surface-variant">
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Quick Navigation</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-xs text-on-surface-variant">
 <li class=""><a class="hover:text-primary transition-colors" href="index.html">• Home</a></li>
 <li class=""><a class="hover:text-primary transition-colors" href="trust-works.html">• Trust Works</a></li>
 <li class=""><a class="hover:text-primary transition-colors" href="about-guruji.html">• About Guruji</a></li>
@@ -630,7 +625,7 @@ SBIN0050039
 </ul>
 </div>
 <div>
-<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Tax Exemption</h4>
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest text-xs font-bold">Tax Exemption</h4>
 <div class="bg-white/80 p-3 rounded-lg border border-outline-variant/40 text-xs text-on-surface-variant space-y-1">
 <p class="font-bold text-primary">80G Income Tax Benefit</p>
 <p class="text-[11px] leading-relaxed">Exempted u/s 11 clause (i) of first proviso to subsection (5) of 80G of INCOME TAX Act 1961.</p>
@@ -639,7 +634,7 @@ SBIN0050039
 </div>
 </div>
 </div>
-<div class="max-w-container-max mx-auto px-margin-page pb-8 border-t border-outline-variant/30 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
+<div class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page pb-6 sm:pb-8 border-t border-outline-variant/30 pt-5 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 text-center">
 <p class="text-xs text-on-surface-variant">
             © 2024 Sarvesh Divya Charitable Trust. Regd No. 396 (Bathinda, Punjab). All Rights Reserved.
         </p>
