@@ -1,0 +1,475 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Donate &amp; Support - Sarvesh Divya Charitable Trust</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Rozha+One&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffdbca",
+                        "on-secondary-fixed-variant": "#7c2d12",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#75280d",
+                        "error": "#ba1a1a",
+                        "primary": "#8d4b00",
+                        "on-secondary-fixed": "#3a0b00",
+                        "inverse-surface": "#27313e",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdcc3",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#121c28",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fe906d",
+                        "outline": "#887364",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dfe9fa",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "surface-container-highest": "#d9e3f4",
+                        "surface-tint": "#904d00",
+                        "surface-dim": "#d1dbec",
+                        "on-background": "#121c28",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "on-primary-fixed": "#2f1500",
+                        "on-tertiary-fixed": "#331200",
+                        "background": "#fbf9f5",
+                        "outline-variant": "#dbc2b0",
+                        "tertiary": "#984300",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-surface-variant": "#554336",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#bb5810",
+                        "primary-container": "#b15f00",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f5",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#efe5dc",
+                        "secondary": "#9b4427",
+                        "surface-container-low": "#f7f1eb",
+                        "surface-container": "#f0e6dc",
+                        "on-primary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-page": "clamp(16px, 5vw, 64px)",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap": "100px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Libre Caslon Text", "serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "headline-md": ["Libre Caslon Text", "serif"],
+                        "label-sm": ["Manrope", "sans-serif"],
+                        "headline-xl": ["Libre Caslon Text", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -6px rgba(141, 75, 0, 0.12);
+        }
+        #mobile-menu-toggle:checked ~ nav {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 40;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF7F2] text-on-background font-body-md overflow-x-hidden">
+<!-- Header (Unified) -->
+<header class="bg-surface/95 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="max-w-container-max mx-auto flex justify-between items-center px-margin-page h-20 relative">
+<a href="index.html" class="flex items-center gap-3">
+<span class="text-2xl text-primary font-bold">卐</span>
+<div class="flex flex-col">
+<span class="font-headline-md font-bold text-primary tracking-tight leading-tight">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+<span class="text-xs font-semibold text-secondary tracking-wider uppercase">Sarvesh Divya Charitable Trust (Regd. 396)</span>
+</div>
+</a>
+<input class="hidden peer" id="mobile-menu-toggle" type="checkbox">
+<label class="md:hidden p-2 text-primary cursor-pointer" for="mobile-menu-toggle">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</label>
+<nav class="hidden md:flex items-center gap-6 lg:gap-8 bg-surface md:bg-transparent absolute md:relative top-20 md:top-0 left-0 w-full md:w-auto p-6 md:p-0 flex-col md:flex-row border-b md:border-0 border-outline-variant/30 shadow-lg md:shadow-none peer-checked:flex">
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="trust-works.html">Trust Works</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="about-guruji.html">About Guruji</a>
+<a class="font-label-sm font-semibold text-primary border-b-2 border-primary pb-1" href="donation.html">Donation</a>
+<a class="font-label-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+<a class="md:hidden w-full text-center bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm mt-4 shadow" href="donation.html">Donate Now</a>
+</nav>
+<a class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-sm hover:bg-primary-container transition-all shadow-sm active:scale-95" href="donation.html">
+<span class="material-symbols-outlined text-base">volunteer_activism</span>
+<span class="">Donate Now</span>
+</a>
+</div>
+</header>
+<main>
+<!-- Hero Section with Authentic Guruji Portrait & Mission Details -->
+<section class="relative bg-gradient-to-b from-[#FFF7EE] to-[#FAF7F2] border-b border-outline-variant/30 pt-10 pb-16 md:py-16 px-4 sm:px-6 md:px-margin-page">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-5">
+<div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+<span class="material-symbols-outlined text-base">verified</span>
+                    100% Tax Exempted under Section 80G
+                </div>
+<h1 class="font-headline-xl text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-tight">
+                    जीवदया, शिक्षा एवं धर्म सेवा में आपका पावन सहयोग
+                </h1>
+<p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+                    समन्वय मिशन, पंजाब मालवा केसरी, राष्ट्रसंत <strong>Dr. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी महाराज साहब (निराले बाबा)</strong> की सद्प्रेरणा से संचालित पक्षी चिकित्सालय, गौशालाएँ, पब्लिक स्कूल एवं जैन तीर्थों के संचालन हेतु अपना अमूल्य सहयोग प्रदान करें।
+                </p>
+<!-- Official Highlights Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+<div class="bg-white p-3 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="text-xs text-on-surface-variant">Registration No.</div>
+<div class="text-base font-bold text-primary">Regd. 396</div>
+</div>
+<div class="bg-white p-3 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="text-xs text-on-surface-variant">80G Status</div>
+<div class="text-base font-bold text-secondary">Exempted u/s 11</div>
+</div>
+<div class="col-span-2 sm:col-span-1 bg-white p-3 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="text-xs text-on-surface-variant">PAN Number</div>
+<div class="text-base font-bold text-on-surface">AAHTS4077Q</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-2">
+<a class="bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-primary-container transition flex items-center gap-2" href="#donate-now">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                        दान करें (Scan QR &amp; Bank Details)
+                    </a>
+<a class="border border-primary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-primary/5 transition flex items-center gap-2" href="trust-works.html">
+<span class="material-symbols-outlined">account_balance</span>
+                        प्रेरित संस्थाएं देखें
+                    </a>
+</div>
+</div>
+<!-- Authentic Guruji Visual Focus -->
+<div class="lg:col-span-5 flex flex-col items-center">
+<div class="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-surface-container-lowest p-2">
+<img alt="Dr. Acharya Pravar Nirale Baba Guruji" class="w-full h-80 object-cover object-top rounded-xl" src="https://lh3.googleusercontent.com/aida/AEtjO1XCSKlERqbvhROKW-cCkEFlpVjDsLlB7zF9ZUYNa0Wj9c65ddO4FTRcbL_Wkx952WNTVWPSOZLIeDAEMPEkB6b9YM6C5eHaQwPgaRmk0LxokqhNGfafCWtHHCbXP9y8M1NELM2gic8JqZAtro1DJbLDIZV3vzWWRh9BqxzKpcdC5bX0xa97Zx57q8tqo3H3nkdsYBSOUxei2sK_DmM6Q5ZoCDktBW2lurfeKQ4wW36vtLrgWAu7u_Zz1Q4JUwetHe24x_NXz0dYKt4">
+<div class="p-4 text-center">
+<p class="font-headline-md font-bold text-primary text-base sm:text-lg">
+                            Dr. आचार्य प्रवर श्री मद् दिव्यानन्द सूरीश्वर जी
+                        </p>
+<p class="text-xs text-on-surface-variant font-medium mt-1">
+                            (निराले बाबा) • संस्थापक, समन्वय मिशन
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Verified Bank Transfer & QR Section -->
+<section class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-page py-12 md:py-16" id="donate-now">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="text-secondary font-semibold text-xs tracking-widest uppercase">Official Payment Gateway</span>
+<h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-primary font-bold mt-1">
+                Official Trust Bank &amp; UPI Details
+            </h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2">
+                All donations are officially received in the trust bank account verified and approved under 80G Income Tax Exemption.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Bank Account Card -->
+<div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm border border-outline-variant/40 bento-card">
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl">account_balance</span>
+<div>
+<h3 class="font-headline-md text-xl md:text-2xl font-bold text-on-surface">State Bank of India</h3>
+<p class="text-xs text-on-surface-variant font-medium">Bhatinda Branch (Punjab)</p>
+</div>
+</div>
+<span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> Verified
+                    </span>
+</div>
+<!-- Verbatim Details Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 py-6 border-b border-outline-variant/30">
+<div>
+<span class="text-xs uppercase font-semibold text-on-surface-variant tracking-wider">Account Holder / Beneficiary</span>
+<p class="font-bold text-on-surface text-base sm:text-lg mt-0.5">SARVESH DIVYA CHARITABLE TRUST</p>
+<span class="text-xs text-primary font-medium">Bathinda (Regd. No. 396)</span>
+</div>
+<div>
+<span class="text-xs uppercase font-semibold text-on-surface-variant tracking-wider">Bank &amp; Branch</span>
+<p class="font-bold text-on-surface text-base mt-0.5">State Bank of India</p>
+<p class="text-xs text-on-surface-variant font-medium">Bhatinda (Punjab)</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-primary/20">
+<div class="flex justify-between items-center">
+<span class="text-xs uppercase font-bold text-on-surface-variant">Account Number</span>
+<button class="text-xs text-primary hover:underline font-bold flex items-center gap-1" onclick="navigator.clipboard.writeText('65026931629'); alert('Account Number Copied: 65026931629');">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                            </button>
+</div>
+<p class="font-mono text-xl sm:text-2xl font-bold text-primary tracking-wide mt-1 select-all">65026931629</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-primary/20">
+<div class="flex justify-between items-center">
+<span class="text-xs uppercase font-bold text-on-surface-variant">IFSC Code</span>
+<button class="text-xs text-primary hover:underline font-bold flex items-center gap-1" onclick="navigator.clipboard.writeText('SBIN0050039'); alert('IFSC Code Copied: SBIN0050039');">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                            </button>
+</div>
+<p class="font-mono text-xl sm:text-2xl font-bold text-primary tracking-wider mt-1 select-all">SBIN0050039</p>
+</div>
+</div>
+<!-- Registration, PAN, 80G Declaration -->
+<div class="mt-6 space-y-4">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+<div class="bg-[#FAF7F2] p-2.5 rounded-lg border border-outline-variant/30">
+<span class="text-on-surface-variant block">PAN Number:</span>
+<strong class="text-sm text-on-surface font-mono">AAHTS4077Q</strong>
+</div>
+<div class="bg-[#FAF7F2] p-2.5 rounded-lg border border-outline-variant/30">
+<span class="text-on-surface-variant block">Helpline / Mobile:</span>
+<strong class="text-sm text-on-surface">9872321272</strong>
+</div>
+<div class="col-span-2 sm:col-span-1 bg-[#FAF7F2] p-2.5 rounded-lg border border-outline-variant/30">
+<span class="text-on-surface-variant block">Registration Date:</span>
+<strong class="text-sm text-on-surface">02-10-2021</strong>
+</div>
+</div>
+<div class="bg-amber-50/80 border-l-4 border-amber-600 p-4 rounded-r-lg">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-amber-700 shrink-0">verified_user</span>
+<div>
+<h4 class="text-xs font-bold uppercase text-amber-900 tracking-wider">Official 80G Exemption Declaration:</h4>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed mt-1">
+                                    "Amount Donated to this trust is exempted u/s. 11 clause (i) of first proviso to subsection (5) of 80G of INCOME TAX Act 1961 vide Document No. <strong>AAHTS4077QF2021101</strong>, Date: 02-10-2021."
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Authentic QR Code Card -->
+<div class="lg:col-span-5 space-y-6">
+<div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-outline-variant/40 text-center bento-card">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold uppercase px-3 py-1 rounded-full mb-3">
+                        Instant UPI Payment
+                    </span>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Scan &amp; Pay Directly</h3>
+<p class="text-xs sm:text-sm text-on-surface-variant mt-1 mb-4">
+                        Supported apps: Google Pay, PhonePe, Paytm, BHIM, SBI YONO &amp; any banking UPI.
+                    </p>
+<div class="bg-gradient-to-b from-primary/5 to-primary/15 p-4 rounded-2xl border-2 border-primary/20 inline-block shadow-inner mx-auto">
+<div class="w-56 h-56 sm:w-64 sm:h-64 overflow-hidden rounded-xl bg-white relative flex items-center justify-center border border-outline-variant/30">
+<img alt="Sarvesh Divya Charitable Trust UPI QR Code" class="absolute w-[440%] h-[380%] max-w-none object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk" style="bottom: 1%; right: 4%;">
+</div>
+</div>
+<div class="mt-4 flex items-center justify-center gap-2 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-green-600 text-base">check_circle</span>
+                        Direct Bank Credit: Sarvesh Divya Charitable Trust
+                    </div>
+</div>
+<!-- Official Verification Proof Box -->
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/40 shadow-sm" id="verification">
+<div class="flex items-start gap-4">
+<img alt="Official Trust Notice" class="w-20 h-24 object-cover rounded-lg border shadow-sm shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk">
+<div>
+<h4 class="font-bold text-primary text-sm sm:text-base">आधिकारिक ट्रस्ट विवरण एवं संस्था सूची</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                                ट्रस्ट का अधिकृत विवरण (खाता संख्या, IFSC, 80G पंजीकरण) निराले बाबा जी की संस्थाओं की आधिकारिक विवरणिका से सत्यापित है।
+                            </p>
+<a class="mt-2 inline-flex items-center gap-1 text-xs font-bold text-secondary hover:underline" href="https://lh3.googleusercontent.com/aida/AEtjO1VDj2am53zA_0h0pITJ0Ugqy1yUu6ciZn2y7ZMtAb7XsZBIE0327GthllwJZh0HYk8oirDjnIOdJzEo9Ns1ugACs6COEmjV3SoC1dfopiGIyoHOZVZaZN3xT2b8G0V9h-NfePI_vhaRNmJ9dCGcBoeO2hx1q2z-Nihu4MDUs4n8g9K6q6u7B3Qn4XiEbCy_n-ay7KgE2lIZ4e6aVoz07jWzvL6UC6_ZAfMalhRX_NyKunopttJUnw_Zmon8C59HAroBJHRavkTEFPk" target="_blank">
+<span class="material-symbols-outlined text-sm">open_in_new</span> पूरा आधिकारिक पोस्टर देखें
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Beneficiary Institutions Section -->
+<section class="bg-white border-y border-outline-variant/30 py-16 px-4 sm:px-6 md:px-margin-page" id="institutions">
+<div class="max-w-container-max mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="text-secondary font-semibold text-xs tracking-widest uppercase">Guided By Nirale Baba Guruji</span>
+<h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-primary font-bold mt-1">
+                    मार्गदर्शन व सद् प्रेरणा से निर्मित प्रमुख संस्थाएँ
+                </h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2">
+                    आपके द्वारा दिए गए दान का उपयोग निराले बाबा के सानिध्य में स्थापित निम्न पक्षी चिकित्सालयों, गौशालाओं, विद्यालयों एवं तीर्थों की सेवा में किया जाता है:
+                </p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 1. J.D. Nirale Baba Public School -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/40 bento-card flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<img alt="J.D. Nirale Baba Public School Logo" class="w-16 h-16 object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VYeecTdvYT2HEoYAjdFdIQkV8LaFxKlafKymHsfBACpws5WV0IJS6kXj8v6Xb8Jc0rKfQW81asQAUGWHx2NhrJjS8iwW6MFJaWzmPjEVtmUsI_Fpv6-cOh2beclwrrrSHtcxAlAmxcY-B_rOp0BG52pga0ERjPzqv-Whg6g2B0BxDgJzynnoQ4ZYrdZiwoxlrzNcAfL2oQdWxtpddamWh5qdeVPKmh9dXcxt4MjmF4ZSiqGUk1wV-3_lTsUPExMGsx5rOpgaP_9HU">
+<div>
+<span class="text-xs font-bold uppercase text-primary tracking-wide">शिक्षा संस्कार (Education)</span>
+<h3 class="font-headline-md text-lg font-bold text-on-surface leading-snug">J.D. निराले बाबा पब्लिक स्कूल</h3>
+</div>
+</div>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                            📍 <strong>मलकाना रोड़, तलवंडी साबो, जिला-बठिंडा (पंजाब)</strong>
+</p>
+<p class="text-xs text-on-surface-variant mt-2 italic bg-white/70 p-2 rounded border border-outline-variant/20">
+                            "विद्या विनयेन् शोभते" — संस्कारित आधुनिक एवं नैतिक शिक्षा का केंद्र।
+                        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs text-primary font-semibold">
+<span class="">सहयोग क्षेत्र: शिक्षा व छात्रवृत्ति</span>
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+</div>
+<!-- 2. Talwandi Sabo Bird Hospital -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/40 bento-card flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl">medical_services</span>
+</div>
+<span class="text-xs font-bold uppercase text-secondary tracking-wide">पक्षी चिकित्सालय (Avian Care)</span>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mt-1">निराले बाबा पक्षी आवास गृह एवं पक्षी हॉस्पिटल</h3>
+<p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                            📍 <strong>मलकाना रोड़, तलवंडी साबो, जिला—बठिंडा (पंजाब)</strong>
+</p>
+<p class="text-xs text-on-surface-variant mt-2">
+                            घायल व बीमार मूक पक्षियों का निःशुल्क उपचार, शल्य चिकित्सा एवं संरक्षण।
+                        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs text-primary font-semibold">
+<span class="">सहयोग क्षेत्र: पक्षी औषधि व दाना-पानी</span>
+<span class="material-symbols-outlined text-sm">healing</span>
+</div>
+</div>
+<!-- 3. Shri Karanpur Bird Hospital -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/40 bento-card flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl">local_hospital</span>
+</div>
+<span class="text-xs font-bold uppercase text-secondary tracking-wide">पक्षी हॉस्पिटल व मंदिर</span>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mt-1">दिव्यानंद निराले बाबा पक्षी हॉस्पिटल</h3>
+<p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                            पार्श्व पद्मावती निराले बाबा मंदिर परिसर<br>
+                            📍 <strong>श्री करणपुर, जिला—श्री गंगानगर (राजस्थान)</strong>
+</p>
+<p class="text-xs text-on-surface-variant mt-2">
+                            सीमावर्ती क्षेत्र में जीवदया का वृहद सेवा प्रकल्प।
+                        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs text-primary font-semibold">
+<span class="">सहयोग क्षेत्र: पक्षी एम्बुलेंस व चिकित्सा</span>
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Unified) -->
+<footer class="bg-surface-container-highest w-full border-t-4 border-tertiary-container" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-container-max mx-auto px-margin-page py-14">
+<!-- Trust Details -->
+<div class="lg:col-span-5">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-xl text-primary font-bold">卐</span>
+<span class="font-headline-md font-bold text-primary text-xl">सर्वेश दिव्य चैरिटेबल ट्रस्ट</span>
+</div>
+<p class="text-xs font-semibold text-secondary uppercase tracking-widest mb-3">
+                SARVESH DIVYA CHARITABLE TRUST (Regd. No. 396)
+            </p>
+<p class="font-body-md text-sm text-on-surface-variant mb-6 max-w-md">
+                Established under the guidance of Dr. Acharya Pravar Shri Mad Divyanand Surishwar Ji Maharaj Saheb (Nirale Baba) for avian hospitals, gaushalas, schools, and pilgrimage centers.
+            </p>
+<div class="space-y-2 text-xs text-on-surface-variant">
+<p class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+<span class=""><strong>Head Office:</strong> Malkana Road, Talwandi Sabo, Dist. Bathinda (Punjab)</span>
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">call</span>
+<span class=""><strong>Official Mobile:</strong> <a href="tel:9872321272" class="hover:underline">9872321272</a></span>
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">badge</span>
+<span class=""><strong>PAN:</strong> AAHTS4077Q | <strong>Regd:</strong> 396</span>
+</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div>
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Key Centers</h4>
+<ul class="space-y-2 text-xs text-on-surface-variant">
+<li class="">• J.D. Nirale Baba School</li>
+<li class="">• Talwandi Sabo Bird Hospital</li>
+<li class="">• Kisturiya Jain Tirth (Bikaner)</li>
+<li class="">• Bhadaur Gaudham (Barnala)</li>
+<li class="">• Dhamnod Animal Hospital (Ratlam)</li>
+<li class="">• Babanpur Gaushala (Fatehabad)</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Quick Navigation</h4>
+<ul class="space-y-2 text-xs text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="index.html">• Home</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="trust-works.html">• Trust Works</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="about-guruji.html">• About Guruji</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="donation.html">• Donation</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="contact.html">• Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-on-surface-variant uppercase mb-4 tracking-widest text-xs font-bold">Tax Exemption</h4>
+<div class="bg-white/80 p-3 rounded-lg border border-outline-variant/40 text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">80G Income Tax Benefit</p>
+<p class="text-[11px] leading-relaxed">Exempted u/s 11 clause (i) of first proviso to subsection (5) of 80G of INCOME TAX Act 1961.</p>
+<p class="text-[10px] text-secondary font-mono">Doc: AAHTS4077QF2021101</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-page pb-8 border-t border-outline-variant/30 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
+<p class="text-xs text-on-surface-variant">
+            © 2024 Sarvesh Divya Charitable Trust. Regd No. 396 (Bathinda, Punjab). All Rights Reserved.
+        </p>
+<p class="text-xs text-secondary font-medium">
+            समन्वय मिशन — जीव दया, अहिंसा एवं सेवा परमो धर्मः
+        </p>
+</div>
+</footer>
+</body></html>
